@@ -1,0 +1,11 @@
+@ECHO OFF
+::Eric Yost
+::inspired by a co-worker who would forget to lock his pc
+
+
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d  "path to your image" /f
+::changes the image set in the registry key
+
+
+START RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+::refreshes background
